@@ -2,7 +2,6 @@
 
 # A script that enables snoopy logging for system wide installation.
 # You have to run it as privileged user.
-# $Id: enable.sh 18 2010-02-10 01:44:14Z bostjanskufca $
 
 
 
