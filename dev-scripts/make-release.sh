@@ -19,25 +19,32 @@ fi
 
 
 
-### Check if release already exists
-if [ -e "tags/release-$RELEASE_TAG" ]; then
-	echo "ERROR: Release tag already exists"
+### Check if release tag exists
+if [ `git tag | grep -c "^$RELEASE_TAG\$"` -ne 1 ]; then
+	echo "ERROR: Release tag does not exist, please create it: $RELEASE_TAG"
 	exit 2
 fi
 
 
 
+### Check if temporary directory exists
+PKGDIRNAME="snoopy-$RELEASE_TAG"
+PKGDIR="../tmp/$PKGDIRNAME"
+if [ -e $PKGDIR ]; then
+	echo "ERROR: Temporary package directory already exists: $PKGDIR"
+	exit 3
+fi
+mkdir $PKGDIR
+
+
+
 ### Create copy of trunk
-svn cp trunk tags/release-$RELEASE_TAG &&
-svn ci -m "Commiting release $RELEASE_TAG to svn" &&
-
-
-
-# Create temporary directory and copy release there
-cp -pR tags/release-$RELEASE_TAG snoopy-$RELEASE_TAG &&
-cd snoopy-$RELEASE_TAG &&
+git checkout $RELEASE_TAG &&
+cp -pR ./* $PKGDIR &&
+cd $PKGDIR &&
 autoheader &&
 autoconf &&
 cd .. &&
-tar -c -z -f snoopy-$RELEASE_TAG.tar.gz snoopy-$RELEASE_TAG &&
-rm -rf snoopy-$RELEASE_TAG
+tar -c -z -f $PKGDIRNAME.tar.gz $PKGDIRNAME &&
+rm -rf $PKGDIRNAME &&
+echo "SUCCESS! Package created: $PKGDIRNAME.tar.gz (in `dirname $PKGDIR`)"
