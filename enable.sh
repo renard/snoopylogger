@@ -8,7 +8,7 @@
 
 ### Where is the library installed?
 LIBDIR=$1
-if [ "x$LIBDIR" == "x" ]; then
+if [ -z "$LIBDIR" ]; then
     echo "ERROR: No argument given, libdir expected"
     exit 1
 fi
@@ -33,7 +33,7 @@ fi
 
 
 ### Do the actual install
-if [ `grep -c "^$LIBDIR/snoopy.so"   /etc/ld.so.preload` == 0 ]; then
+if [ `grep -c "^$LIBDIR/snoopy.so" /etc/ld.so.preload` -eq 0 ]; then
     echo "$LIBDIR/snoopy.so" >> /etc/ld.so.preload
     echo "Snoopy enabled in /etc/ld.so.preload. Check syslog messages for output."
 else
