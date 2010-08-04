@@ -41,6 +41,7 @@ mkdir $PKGDIR
 ### Create copy of trunk
 git checkout $RELEASE_TAG &&
 cp -pR ./* $PKGDIR &&
+git log > $PKGDIR/ChangeLog &&
 cd $PKGDIR &&
 rm -rf dev-scripts &&
 autoheader &&
