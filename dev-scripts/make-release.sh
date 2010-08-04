@@ -42,6 +42,7 @@ mkdir $PKGDIR
 git checkout $RELEASE_TAG &&
 cp -pR ./* $PKGDIR &&
 cd $PKGDIR &&
+rm -rf dev-scripts &&
 autoheader &&
 autoconf &&
 cd .. &&
