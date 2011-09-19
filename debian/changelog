@@ -2,6 +2,12 @@ snoopy (1:1.8.0+git.6-1) oldstable; urgency=low
 
   * New automated build from: 1.8.0 - 71ea9e7
 
+ -- Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org>  Mon, 19 Sep 2011 09:06:24 +0000
+
+snoopy (1:1.8.0+git.6-1) oldstable; urgency=low
+
+  * New automated build from: 1.8.0 - 71ea9e7
+
  -- Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org>  Mon, 19 Sep 2011 09:04:23 +0000
 
 snoopy (1:1.8.0+git.6-1) oldstable; urgency=low
