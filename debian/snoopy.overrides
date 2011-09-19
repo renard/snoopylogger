@@ -1,0 +1,3 @@
+snoopy: sharedobject-in-library-directory-not-actually-a-shlib lib/snoopy.so
+snoopy: sharedobject-in-library-directory-missing-soname lib/snoopy.so
+snoopy: description-contains-homepage

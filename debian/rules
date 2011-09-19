@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+%:
+	dh --with quilt $*
+
+override_dh_auto_configure:
+	autoheader
+	autoconf
+	./configure \
+		--build=x86_64-linux-gnu \
+		--prefix=/usr \
+	 	--libdir=/lib
+
+override_dh_clean:
+	dh_clean
+	rm -f configure
