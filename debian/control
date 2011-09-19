@@ -12,9 +12,9 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Replaces: snoopy
 Description: An execve() wrapper and logger
- snoopy is merely a shared library that is used as a wrapper
+ snoopylogger is merely a shared library that is used as a wrapper
  to the execve() function provided by libc as to log every call
- to syslog (authpriv).  system administrators may find snoopy
+ to syslog (authpriv).  system administrators may find snoopylogger
  useful in tasks such as light/heavy system monitoring, tracking other
  administrator's actions as well as getting a good 'feel' of
  what's going on in the system (for example apache running cgi
