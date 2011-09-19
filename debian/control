@@ -1,4 +1,4 @@
-Source: snoopy
+Source: snoopylogger
 Section: admin
 Priority: optional
 Maintainer: Sébastien Gross <seb•ɑƬ•chezwam•ɖɵʈ•org>
@@ -7,9 +7,10 @@ Build-Depends: debhelper (>= 7.0.50), quilt (>=0.46-7),
 Standards-Version: 3.8.0.0 
 Homepage: http://sourceforge.net/projects/snoopylogger/
 
-Package: snoopy
+Package: snoopylogger
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: snoopy
 Description: An execve() wrapper and logger
  snoopy is merely a shared library that is used as a wrapper
  to the execve() function provided by libc as to log every call
