@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # A script that enables snoopy logging for system wide installation.
 # You have to run it as privileged user.
